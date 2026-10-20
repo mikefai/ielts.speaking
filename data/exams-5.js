@@ -33,7 +33,7 @@
   part3: {
     theme: 'The internet and social media',
     questions: [
-      'What do people usually do online in their free time?',
+      'Do you think most teenagers spend a lot of time online?',
       'In what ways does the internet help people to learn new things?',
       'Why do some people feel pressure to share pictures of their lives online?',
       'What problems can social media cause for teenagers?',
@@ -47,7 +47,7 @@
     { topic: 'Hometown', questions: [
       'Does your hometown have a swimming pool or sports centre?',
       'How noisy is your hometown during the day?',
-      'What language do most people speak in your hometown?',
+      'What can you see in the centre of your hometown?',
       'Do you often see tourists where you live?',
     ] },
     { topic: 'Advertisements', questions: [
@@ -58,7 +58,7 @@
     ] },
     { topic: 'Keys', questions: [
       'Does anyone else have a spare key to your home?',
-      'What is on your key ring, if you use one?',
+      'How did you get your first house key?',
       'Have you ever used a door code instead of a key?',
       'What would you do if you lost your keys today?',
     ] },
@@ -117,8 +117,8 @@
   part3: {
     theme: 'News and media',
     questions: [
-      'Where do most people in your country get their news from?',
-      'What are the main differences between reading news on a phone and reading a printed newspaper?',
+      'Do you think people trust the news they read on the internet?',
+      'What makes some news stories more interesting to people than others?',
       'Why are news videos so popular with young people?',
       'How can a misleading news story harm the people who read it?',
       'Is it more important for journalists to report news quickly, or to check their facts carefully?',
@@ -131,13 +131,13 @@
     { topic: 'Home', questions: [
       'How many rooms does your home have?',
       'What do you keep in your kitchen cupboards?',
-      'Do you have a washing machine at home?',
-      'Is your home on the ground floor?',
+      'What is the oldest thing in your home?',
+      'Which gift from a friend do you keep at home?',
     ] },
     { topic: 'Stars', questions: [
       'Can you see many stars from where you live?',
       'Have you ever seen a shooting star?',
-      'When you look up at the night sky, what do you see?',
+      'What planets can you name?',
       'Why do you find the stars interesting, if you do?',
     ] },
     { topic: 'Mirrors', questions: [
@@ -159,11 +159,11 @@
   part3: {
     theme: 'Change and taking risks',
     questions: [
-      'Which changes do people usually find hardest to accept?',
+      'Do you think most people like trying new things?',
       'Why do some people feel uncomfortable with change?',
       'What are the risks of trying something new without planning it first?',
       'How can taking risks help people to grow?',
-      'Do you agree that people who never take risks miss out on opportunities?',
+      'Is it better to take risks when you are young or when you are older?',
     ],
   },
 },
@@ -171,13 +171,13 @@
   id: 25,
   part1: [
     { topic: 'Hometown', questions: [
-      'Is your hometown near the sea?',
+      'What is the nearest big city to your hometown?',
       'How many universities does your hometown have?',
-      'Are there many new buildings going up in your hometown?',
+      'How clean are the streets in your hometown?',
       'What kind of jobs are common in your hometown?',
     ] },
     { topic: 'Dictionaries', questions: [
-      'Do you still use a paper dictionary?',
+      'What did your teachers say about using a dictionary at school?',
       'How do you usually look up the meaning of a new word?',
       'Do you prefer a dictionary with translations or one only in English?',
       'What is the last word you looked up?',
