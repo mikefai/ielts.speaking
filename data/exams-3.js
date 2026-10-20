@@ -12,7 +12,7 @@
       'How did you learn to write when you were a child?',
       'Have you ever received a handwritten letter from someone?',
       'Do you prefer taking notes by hand or on a laptop, and why?',
-      'Is your handwriting easy for other people to read?',
+      'Did your teachers care about neat handwriting when you were at school?',
     ] },
     { topic: 'Holidays', questions: [
       'Do you usually go away for a holiday in the summer?',
