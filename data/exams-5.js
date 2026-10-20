@@ -137,14 +137,14 @@
     { topic: 'Stars', questions: [
       'Can you see many stars from where you live?',
       'Have you ever seen a shooting star?',
-      'What planets can you name?',
+      'What do you usually do when you look at the stars?',
       'Why do you find the stars interesting, if you do?',
     ] },
     { topic: 'Mirrors', questions: [
       'Is there a mirror by your front door?',
       'How big is the largest mirror in your home?',
       'What do you check in a mirror before you go out?',
-      'Did you ever break a mirror by accident?',
+      'Have you ever broken a mirror by accident?',
     ] },
   ],
   part2: {

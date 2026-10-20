@@ -1,5 +1,7 @@
 // Classic script: plain globals in the browser (file://), module.exports under Node for tests.
 const DONE_KEY = 'ielts-speaking-done';
+const EXPECTED_EXAMS = 30;
+const TITLE = 'IELTS Speaking Mock Exams';
 
 function esc(s) {
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
@@ -47,14 +49,18 @@ function createTimer(onTick) {
   return {
     start(seconds) {
       stop();
-      let left = seconds;
-      onTick(left);
-      if (left <= 0) return;
+      // Wall-clock deadline: a suspended (screen-locked) page catches up instead of freezing.
+      const deadline = Date.now() + seconds * 1000;
+      let last = seconds;
+      onTick(last);
+      if (last <= 0) return;
       handle = setInterval(() => {
-        left -= 1;
+        const left = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+        if (left === last) return;
+        last = left;
         onTick(left);
         if (left <= 0) stop();
-      }, 1000);
+      }, 250);
     },
     stop,
   };
@@ -87,7 +93,7 @@ ${p1}
 <section>
 <h3>Part 2: Long turn (1 min to prepare, up to 2 min to speak)</h3>
 <div class="cue"><p>${esc(part2.prompt)}</p><p>You should say:</p><ul>${items(part2.bullets)}</ul></div>
-<div class="timer"><button data-start="60">Start 1-minute preparation</button> <button data-start="120">Start 2-minute talk</button> <output id="timer">0:00</output></div>
+<div class="timer"><button data-start="60">Start 1-minute preparation</button> <button data-start="120">Start 2-minute talk</button> <output id="timer" role="timer" aria-live="off" aria-label="Time remaining">0:00</output></div>
 </section>
 <section>
 <h3>Part 3: Discussion (4-5 min)</h3>
@@ -109,15 +115,29 @@ if (typeof document !== 'undefined') {
   };
   const timer = createTimer(n => {
     const out = document.getElementById('timer');
-    if (out) out.textContent = fmt(n);
+    if (!out) return;
+    out.textContent = n === 0 ? "Time's up" : fmt(n);
+    out.classList.toggle('up', n === 0);
+    if (n === 0) {
+      try {
+        navigator.vibrate(300);
+      } catch {
+        // No vibration support (desktop, iOS): the visible cue is enough.
+      }
+    }
   });
+  const maxId = Math.max(0, ...exams.map(e => e.id)); // bound routes by ids that exist, not by how many loaded
   const show = () => {
     timer.stop();
-    const route = parseRoute(location.hash, exams.length);
+    const route = parseRoute(location.hash, maxId);
     const done = loadDone(store());
     // Falls back to the list if the routed exam is missing (e.g. its data file failed to load).
     const exam = route.view === 'exam' && exams.find(e => e.id === route.id);
-    app.innerHTML = exam ? renderExam(exam, done.includes(exam.id), exams.length) : renderList(exams, done);
+    const warn = exams.length >= EXPECTED_EXAMS ? '' : `<p class="warn">${exams.length
+      ? `Only ${exams.length} of ${EXPECTED_EXAMS} exams loaded. Keep the data folder next to index.html.`
+      : 'Exam data did not load. Keep index.html, app.js, style.css and the data folder together.'}</p>`;
+    app.innerHTML = exam ? renderExam(exam, done.includes(exam.id), maxId) : warn + (exams.length ? renderList(exams, done) : '');
+    document.title = exam ? `Exam ${exam.id} - ${TITLE}` : TITLE;
     window.scrollTo(0, 0);
   };
   app.addEventListener('click', e => {

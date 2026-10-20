@@ -49,7 +49,7 @@
       'What do you do to stay warm at home in winter?',
       'What smell reminds you most of your home?',
       'Do you enjoy shopping for things for your home, and why?',
-      'What was it like the last time you moved home?',
+      'If you have moved home before, what was it like?',
     ] },
     { topic: 'Mirrors', questions: [
       'Have you ever bought a mirror, and where did you buy it?',
@@ -163,7 +163,7 @@
     theme: 'Decision-making',
     questions: [
       'What decisions do most young people find the hardest to make?',
-      'How much do our daily habits shape the way we decide things?',
+      'Why do some people make decisions quickly while others take a long time?',
       'Would it be better if people made important decisions more slowly?',
       'What problems can arise when a decision is made by one person alone?',
       'Is it more important to trust your instincts, or to gather as much information as possible?',

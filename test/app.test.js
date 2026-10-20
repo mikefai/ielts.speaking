@@ -46,7 +46,7 @@ test('parseRoute only accepts existing exams', () => {
 });
 
 test('createTimer: restarting replaces the running countdown and it stops at 0', (t) => {
-  t.mock.timers.enable({ apis: ['setInterval'] });
+  t.mock.timers.enable({ apis: ['setInterval', 'Date'] });
   const ticks = [];
   const timer = createTimer(n => ticks.push(n));
   timer.start(3);
@@ -54,20 +54,38 @@ test('createTimer: restarting replaces the running countdown and it stops at 0',
   assert.deepEqual(ticks, [3, 3]);
   t.mock.timers.tick(1000);
   assert.deepEqual(ticks, [3, 3, 2]);
-  t.mock.timers.tick(2000);
+  t.mock.timers.tick(1000);
+  assert.deepEqual(ticks, [3, 3, 2, 1]);
+  t.mock.timers.tick(1000);
   assert.deepEqual(ticks, [3, 3, 2, 1, 0]);
   t.mock.timers.tick(5000);
   assert.deepEqual(ticks, [3, 3, 2, 1, 0]);
 });
 
 test('createTimer.stop silences the countdown', (t) => {
-  t.mock.timers.enable({ apis: ['setInterval'] });
+  t.mock.timers.enable({ apis: ['setInterval', 'Date'] });
   const ticks = [];
   const timer = createTimer(n => ticks.push(n));
   timer.start(5);
   timer.stop();
   t.mock.timers.tick(3000);
   assert.deepEqual(ticks, [5]);
+});
+
+test('createTimer.start(0) emits 0 once and starts no interval', (t) => {
+  t.mock.timers.enable({ apis: ['setInterval', 'Date'] });
+  const ticks = [];
+  createTimer(n => ticks.push(n)).start(0);
+  t.mock.timers.tick(5000);
+  assert.deepEqual(ticks, [0]);
+});
+
+test('createTimer follows the wall clock: a suspended page jumps to the right time', (t) => {
+  t.mock.timers.enable({ apis: ['setInterval', 'Date'] });
+  const ticks = [];
+  createTimer(n => ticks.push(n)).start(5);
+  t.mock.timers.tick(4000); // one jump, as when a locked phone wakes up
+  assert.deepEqual(ticks, [5, 1]);
 });
 
 test('renderList links every exam, shows the Part 2 prompt and marks done ones', () => {
@@ -91,7 +109,7 @@ test('renderExam shows all three parts, every question, the timer and the done b
   assert.match(html, /Part 3/);
   assert.match(html, /data-start="60"/);
   assert.match(html, /data-start="120"/);
-  assert.match(html, /<output id="timer">/);
+  assert.match(html, /<output id="timer"/);
   assert.match(html, /data-done="1"/);
   assert.doesNotMatch(html, /checked/);
   assert.match(renderExam(exam1, true, 30), /checked/);

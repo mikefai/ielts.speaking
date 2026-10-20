@@ -79,7 +79,7 @@
       'Which gifts are most popular for birthdays in your country?',
       'Why do many people enjoy giving presents more than receiving them?',
       'Is a thoughtful gift always more valuable than an expensive one?',
-      'What do you think is the biggest reason people feel pressure to give expensive presents today, and why?',
+      'Why do people feel pressure to give expensive presents today?',
       'Do you agree that generous people are usually happier in life?',
     ],
   },

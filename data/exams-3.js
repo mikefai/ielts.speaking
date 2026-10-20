@@ -60,7 +60,7 @@
     { topic: 'Weekends', questions: [
       'Do you usually feel tired on Sunday evenings?',
       'Do you ever cook a special meal at the weekend?',
-      'Why do you think weekends pass so quickly?',
+      'What do you usually do on a Saturday afternoon?',
       'What makes a weekend feel relaxing for you?',
     ] },
   ],
