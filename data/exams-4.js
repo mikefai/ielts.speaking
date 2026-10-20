@@ -54,14 +54,14 @@
     { topic: 'Patience', questions: [
       'What everyday task requires the most patience from you?',
       'Do you think things through carefully, or do you act quickly?',
-      'What do you usually do when something takes longer than you expected?',
+      'How patient are you with people who speak slowly?',
       'Is there a hobby that has taught you to be more patient?',
     ] },
     { topic: 'Laughing', questions: [
       'When did you last laugh until your stomach hurt?',
       'Do you like watching funny videos on your phone?',
-      'What kind of humour do you enjoy most?',
-      'How easy is it for you to make your friends laugh?',
+      'Where do you go for a good laugh, and why?',
+      'How does laughing with friends make you feel?',
     ] },
   ],
   part2: {
