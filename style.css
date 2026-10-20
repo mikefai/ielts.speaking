@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+:root {
+  --bg: #fdfdfb;
+  --fg: #1d1d1f;
+  --muted: #5f6368;
+  --accent: #1a5fb4;
+  --border: #d0d0d6;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161618;
+    --fg: #ececef;
+    --muted: #9a9aa3;
+    --accent: #8ab4ff;
+    --border: #3a3a42;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1rem; /* 16px side gutters */
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+h1 { font-size: 1.6rem; line-height: 1.25; margin: 0.75rem 0 0.5rem; }
+h2 { font-size: 1.5rem; margin: 1rem 0; }
+h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+h4 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--muted); }
+
+a { color: var(--accent); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+section {
+  margin: 1.5rem 0;
+}
+
+ol,
+ul {
+  padding-left: 1.5rem;
+}
+
+.tip {
+  margin: 0 0 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+
+.progress {
+  margin: 0.5rem 0 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Exam list: 2 columns, 3 from 600px */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: block;
+  min-height: 4rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.card.done::after {
+  content: "✓ done";
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Part 2 cue card */
+.cue {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cue p {
+  margin: 0 0 0.5rem;
+}
+
+.cue p:first-child {
+  font-weight: 600;
+}
+
+.cue ul {
+  margin: 0;
+}
+
+.timer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.timer button {
+  min-height: 44px;
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+output {
+  margin-left: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme {
+  margin: 0 0 0.5rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.done-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.done-toggle input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+@media print {
+  .nav,
+  .timer,
+  .done-toggle {
+    display: none;
+  }
+}

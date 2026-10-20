@@ -98,4 +98,38 @@ ${p1}
 <label class="done-toggle"><input type="checkbox" data-done="${id}"${isDone ? ' checked' : ''}> Mark exam as done</label>`;
 }
 
+if (typeof document !== 'undefined') {
+  const exams = (globalThis.EXAMS || []).slice().sort((a, b) => a.id - b.id);
+  const app = document.getElementById('app');
+  const store = () => {
+    try {
+      return window.localStorage;
+    } catch {
+      return null;
+    }
+  };
+  const timer = createTimer(n => {
+    const out = document.getElementById('timer');
+    if (out) out.textContent = fmt(n);
+  });
+  const show = () => {
+    timer.stop();
+    const route = parseRoute(location.hash, exams.length);
+    const done = loadDone(store());
+    // Falls back to the list if the routed exam is missing (e.g. its data file failed to load).
+    const exam = route.view === 'exam' && exams.find(e => e.id === route.id);
+    app.innerHTML = exam ? renderExam(exam, done.includes(exam.id), exams.length) : renderList(exams, done);
+    window.scrollTo(0, 0);
+  };
+  app.addEventListener('click', e => {
+    const button = e.target.closest('[data-start]');
+    if (button) timer.start(Number(button.dataset.start));
+  });
+  app.addEventListener('change', e => {
+    if (e.target.matches('[data-done]')) setDone(store(), Number(e.target.dataset.done), e.target.checked);
+  });
+  window.addEventListener('hashchange', show);
+  show();
+}
+
 if (typeof module !== 'undefined') module.exports = { esc, fmt, loadDone, setDone, parseRoute, createTimer, renderList, renderExam };
