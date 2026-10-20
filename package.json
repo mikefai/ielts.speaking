@@ -1,0 +1,1 @@
+{ "name": "ielts-speaking", "private": true, "scripts": { "test": "node --test test/*.test.js" } }
