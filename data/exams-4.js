@@ -60,7 +60,7 @@
     { topic: 'Laughing', questions: [
       'When did you last laugh until your stomach hurt?',
       'Do you like watching funny videos on your phone?',
-      'Where do you go for a good laugh, and why?',
+      'Where do you usually go when you want to laugh?',
       'How does laughing with friends make you feel?',
     ] },
   ],

@@ -16,3 +16,11 @@ test('index.html loads the six data files then app.js as plain scripts', () => {
 test('index.html carries the night-before tip', () => {
   assert.ok(html.includes('Night before the test? Pick 2–3 exams, answer out loud with a partner, then sleep.'));
 });
+
+test('every script and stylesheet index.html references exists', () => {
+  for (const f of [...srcs, 'style.css']) assert.ok(fs.existsSync(path.join(__dirname, '..', f)), f);
+});
+
+test('index.html carries the whole night-before tip verbatim', () => {
+  assert.ok(html.includes('Night before the test? Pick 2–3 exams, answer out loud with a partner, then sleep. Speaking is face-to-face with an examiner on test day, so typing answers does not count as practice.'));
+});

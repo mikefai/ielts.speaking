@@ -78,7 +78,6 @@ function renderExam(exam, isDone, total) {
     id < total && `<a href="#/exam/${id + 1}">Exam ${id + 1} &rarr;</a>`,
   ].filter(Boolean);
   const p1 = part1.map(t => `<h4>${esc(t.topic)}</h4>\n<ol>${items(t.questions)}</ol>`).join('\n');
-  const p2bullets = part2.bullets.map(b => `<li>${esc(b)}</li>`).join('');
   return `<nav class="nav">${links.join(' ')}</nav>
 <h2>Exam ${id}</h2>
 <section>
@@ -87,7 +86,7 @@ ${p1}
 </section>
 <section>
 <h3>Part 2: Long turn (1 min to prepare, up to 2 min to speak)</h3>
-<div class="cue"><p>${esc(part2.prompt)}</p><p>You should say:</p><ul>${p2bullets}</ul></div>
+<div class="cue"><p>${esc(part2.prompt)}</p><p>You should say:</p><ul>${items(part2.bullets)}</ul></div>
 <div class="timer"><button data-start="60">Start 1-minute preparation</button> <button data-start="120">Start 2-minute talk</button> <output id="timer">0:00</output></div>
 </section>
 <section>

@@ -58,7 +58,7 @@
     ] },
     { topic: 'Flowers', questions: [
       'Have you ever tried to grow flowers yourself?',
-      'How do you feel when you walk past a garden full of flowers?',
+      'Do you ever stop to look at flowers when you are out, and why?',
       'What flowers do you see most often in the spring?',
       'Is there a plant or flower you would love to have at home?',
     ] },

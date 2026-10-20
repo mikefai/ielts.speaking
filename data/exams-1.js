@@ -163,7 +163,7 @@
       'Do you think children should be taught to help other people at school?',
       'What are the main benefits of volunteering for the people who do it?',
       'How has the way people help their communities changed over the last few decades?',
-      'Should governments pay people to volunteer, or would this take away the true spirit of helping others?',
+      'Should volunteers be paid for their work, or would that spoil the spirit of helping others?',
     ],
   },
 },
@@ -203,8 +203,8 @@
     questions: [
       'Do you think people read as much as they used to?',
       'Why do some people prefer reading on screens to reading on paper?',
-      'What can reading fiction teach people about lives that are different from their own?',
       'How has the way people access books changed over the last twenty years?',
+      'What can reading fiction teach people about lives that are different from their own?',
       'Should schools put more emphasis on classic literature, or on modern books that young people enjoy reading?',
     ],
   },

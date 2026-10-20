@@ -49,3 +49,7 @@ test('no question is repeated across or within exams', () => {
   const qs = exams.flatMap(e => [...e.part1.flatMap(t => t.questions), ...e.part3.questions]).map(norm);
   assert.deepEqual(qs.filter((q, i) => qs.indexOf(q) !== i), []);
 });
+
+test('the full set is present: exams 1 to 30, once each', () => {
+  assert.deepEqual(exams.map(e => e.id).sort((a, b) => a - b), Array.from({ length: 30 }, (_, i) => i + 1));
+});

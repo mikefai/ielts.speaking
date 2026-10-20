@@ -187,6 +187,12 @@ output {
 }
 
 @media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --muted: #444;
+  }
+
   .nav,
   .timer,
   .done-toggle {
