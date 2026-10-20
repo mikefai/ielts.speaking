@@ -103,7 +103,7 @@
     { topic: 'Daily routine', questions: [
       'What do you usually have for breakfast?',
       'Which household jobs do you do at home each day?',
-      'What sound wakes you up in the morning?',
+      'Which part of getting up in the morning is hardest for you?',
       'How long does it take you to get ready in the morning?',
     ] },
   ],
