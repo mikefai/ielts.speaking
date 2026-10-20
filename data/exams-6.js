@@ -33,7 +33,7 @@
   part3: {
     theme: 'Fame and celebrity',
     questions: [
-      'What do people usually enjoy reading about in celebrity news?',
+      'Where do people in your country read about famous people?',
       'What do celebrities gain from being famous?',
       'What problems can constant media attention cause for famous people?',
       'In what ways do celebrities influence the way young people behave?',
@@ -92,18 +92,18 @@
       'What kinds of restaurants does your hometown have?',
       'How would you describe the local accent in your hometown?',
       'Do many children play outside in your hometown?',
-      'Have you ever lived anywhere other than your hometown, and where?',
+      'Is there a place in your hometown that you do not like, and why?',
     ] },
     { topic: 'Evenings', questions: [
       'Do you do any exercise in the evenings?',
       'Are your evenings usually busy, or do you have time to relax?',
-      'Do you ever go shopping in the evenings?',
+      'Who do you usually talk to in the evenings?',
       'Which clothes do you like to wear around the house in the evenings?',
     ] },
     { topic: 'Daily routine', questions: [
       'What do you usually have for breakfast?',
       'Which household jobs do you do at home each day?',
-      'Do you have a cup of tea or coffee when you wake up?',
+      'What sound wakes you up in the morning?',
       'How long does it take you to get ready in the morning?',
     ] },
   ],
@@ -119,7 +119,7 @@
   part3: {
     theme: 'Animals and the environment',
     questions: [
-      'What kinds of animals do people in your country keep as pets?',
+      'What makes an animal a good pet for a family?',
       'Why do some people treat their pets like members of the family?',
       'Would it be better if children learned about animals at school?',
       'How does losing wild animals affect the balance of nature?',
@@ -141,10 +141,10 @@
       'Do you live near your family, or far away from them?',
       'What is the best piece of advice your family has given you?',
       'Do you think you are similar to anyone in your family, and why?',
-      'How often do you see your family during the week?',
+      'What topics do you and your family usually talk about?',
     ] },
     { topic: 'Weather', questions: [
-      'Where do you check the weather forecast before you go out?',
+      'What is your favourite kind of weather for doing sport?',
       'What do you usually wear when it is cold?',
       'What was the hottest day you can remember?',
       'Did bad weather ever stop you from doing something you had planned?',
@@ -163,7 +163,7 @@
     theme: 'Decision-making',
     questions: [
       'What decisions do most young people find the hardest to make?',
-      'What makes a decision difficult for most people?',
+      'How much do our daily habits shape the way we decide things?',
       'Would it be better if people made important decisions more slowly?',
       'What problems can arise when a decision is made by one person alone?',
       'Is it more important to trust your instincts, or to gather as much information as possible?',
@@ -205,10 +205,10 @@
   part3: {
     theme: 'Green spaces in cities',
     questions: [
-      'How do people in cities usually use green spaces?',
+      'Why do people go to green spaces in cities?',
       'What stops many people from visiting green spaces in cities?',
       'How can green spaces help people to stay healthy in a busy city?',
-      'What do you think is the biggest benefit of green spaces for city life, and why?',
+      'What features make a city park attractive to visitors?',
       'Which matters more for a city, protecting old trees or planting new ones?',
       'Can green spaces ever fully make up for the noise and pollution of a busy city?',
     ],
